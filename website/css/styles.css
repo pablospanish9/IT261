@@ -8,6 +8,7 @@
 
 body {
     background: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
@@ -50,7 +51,6 @@ overflow: hidden;
 }
 
 #hero {
-height: 400px;
 background: red;
 margin-bottom: 20px;
 }
@@ -84,4 +84,32 @@ footer ul {
 footer li {
     justify-content: center;
     margin: 0 15px;
+}
+
+img {
+    max-width:100%;
+}
+
+/* typography */
+
+p {
+    margin-bottom:20px;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+    /* font-family: playfair; */
 }
