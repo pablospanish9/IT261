@@ -26,7 +26,7 @@
 
     <main>
     <h2>About Pablo</h2>
-    <img class="pic" src="images/puppy_face.JPG" alt="Face">
+    <img class="pic" src="images/pablo_face.jpg" alt="Face">
     <p>
 Hello there. Here I am again, slowly learning how to make websites. I am continuing where I left off last year, after a few other tech classes in between. I have been taking one class a quarter since the winter of 2000. The more I learn, the more I realize how little I know, and if I do not practice, I begin to forget what I have learned. Since I am learning slowly, it is taking me a long time to learn. My goal is to learn enough web development to make a working website for myself and my business ideas. I could also make websites for other people as a freelancer, and that would only be an addition to what I am already doing for work as a translator/interpreter. At this stage, I am learning web development mostly as a side activity. When I first started, I thought I could change careers and only do web development. Now, I am thinking about integrating this knowledge with my experience in the translation industry. For example, I can offer website translation and localization services, working directly with the code of a website. I also enjoy learning ASL language and working out at the gym.</p>
 
@@ -39,10 +39,10 @@ Hello there. Here I am again, slowly learning how to make websites. I am continu
         <h3>Week2</h3>
         <ol>
             <li><a href="weeks/week2/var.php">var.php</a></li>
-            <li><a href="var.php">var.php</a></li>
-            <li><a href="var.php">var.php</a></li>
-            <li><a href="var.php">var.php</a></li>
-            <li><a href="var.php">var.php</a></li>
+            <li><a href="weeks/week2/vars2.php">Vars2.php</a></li>
+            <li><a href="weeks/week2/currency-logic.php">Currency-logic</a></li>
+            <li><a href="weeks/week2/currency.php">currency.php</a></li>
+            <li><a href="weeks/week2/heredoc.php">heredoc.php</a></li>
         </ol>
 
         <h3>Week3</h3>

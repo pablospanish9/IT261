@@ -30,9 +30,19 @@ echo '<br>';
 $z = $x + $y;
 echo $z;
 echo '<br>';
-
-
-echo '<br>';
-
+$z = $x * $y;
+echo $z;
 
 echo '<br>';
+$z = $x / $y;
+echo $z;
+
+echo '<br>';
+$first_name = 'Olga';
+$last_name = 'Smyth';
+echo $first_name." ". $last_name;
+
+echo '<br>';
+echo "My full name is $first_name $last_name";
+echo '<br>';
+echo 'My full name is '.$first_name.' '.$last_name.'';

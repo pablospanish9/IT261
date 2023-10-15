@@ -44,6 +44,11 @@ main {
    max-width: 550px; 
    margin: 35px;
 }  
+
+main p {
+    margin: 40px;  
+  }
+  
 aside {
     width: 35%;
     background:rgb(221, 179, 179);
