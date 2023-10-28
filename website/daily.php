@@ -8,18 +8,26 @@
   } else {
       $today = date('l');
   }
-
+// rotating content:
   switch($today) {
     case 'Monday':
         $movie = '<h2>Monday is Blade Runner Day</h2>';
         $pic = 'blade.jpg';
         $alt = 'Blade Runner Movie';
-        $content = 'Blade Runner explores themes of humanity through the eyes of Rick Deckard, a retired police officer tasked with hunting synthetic beings known as replicants. This cyberpunk classic delves deep into existential questions.';
+        $color = '#f2d0e8'; 
+        $content = 'Blade Runner explores themes of 
+        humanity through the eyes of Rick Deckard, 
+        a retired police officer tasked with hunting
+         synthetic beings known as replicants.
+          This cyberpunk classic delves deep into
+           existential questions. Somehow I enjoy dystopian
+           movies. And it is good to start the week on Monday with a dystopian movie. ';
         break;
     case 'Tuesday':
         $movie = '<h2>Tuesday is Dune Day</h2>';
         $pic = 'dune.jpg';
         $alt = 'Dune Movie';
+        $color = '#c8ded1'; 
         $content = 'Dune takes you into a future where 
         interstellar travel and complex political machinations
          reign. At the heart is the desert planet of Arrakis, 
@@ -31,6 +39,7 @@
         $movie = '<h2>Wednesday is Everything Everywhere All At Once Day</h2>';
         $pic = 'everywhere.jpg';
         $alt = 'Everything Everywhere All At Once Movie';
+        $color = '#f0adc0'; 
         $content = 'Everything Everywhere All At Once is 
         an intriguing science fiction drama that plays with 
         the multiverse theory. It explores personal and cosmic 
@@ -41,6 +50,7 @@
         $movie = '<h2>Thursday is Guardians of the Galaxy Day</h2>';
         $pic = 'guardians.jpg';
         $alt = 'Guardians of the Galaxy Movie';
+        $color = '#ded5a9'; 
         $content = 'Guardians of the Galaxy mixes humor 
         with action, following a group of intergalactic 
         misfits who band together to protect a powerful orb. 
@@ -52,6 +62,7 @@
         $movie = '<h2>Friday is Riddick Day</h2>';
         $pic = 'riddick.jpg';
         $alt = 'Riddick Movie';
+        $color = '#b8c0cc'; 
         $content = 'Riddick offers a gritty take on the
          survival genre, starring Vin Diesel as the
           antihero stranded on a hostile planet.
@@ -63,6 +74,7 @@
         $movie = '<h2>Saturday is Star Wars Day</h2>';
         $pic = 'starwars.jpg';
         $alt = 'Star Wars Movie';
+        $color = '#cce0db'; 
         $content = 'Star Wars is more than just a movie; it is a 
         cultural phenomenon that has captured the hearts 
         of generations. The epic saga of good versus 
@@ -75,6 +87,7 @@
         $movie = '<h2>Sunday is Star Trek Day</h2>';
         $pic = 'startrek.jpg';
         $alt = 'Star Trek Movie';
+        $color = '#dbd0f2'; 
         $content = 'Star Trek focuses on the voyages of the 
         starship USS Enterprise. More than just a space 
         adventure, the series also tackles ethical and 
@@ -91,7 +104,7 @@
     </div> -->
     <!-- end hero -->
 
-    <main>
+    <main style="background-color: <?php echo $color; ?>; padding: 20px;">
         <h1>Welcome to my daily page!</h1>
         <p>I have a relaxing habit of watching a movie at night, usually 
           science fiction movie. I do not have the time or patience
@@ -104,7 +117,7 @@
         <?php echo $movie; ?>
         <?php echo '<p>' . $content . '</p>'; ?>
 
-        <ul>
+        <ul style="list-style-type: none;">
         <li><a href="?today=Sunday">Sunday</a></li>
         <li><a href="?today=Monday">Monday</a></li>
         <li><a href="?today=Tuesday">Tuesday</a></li>
