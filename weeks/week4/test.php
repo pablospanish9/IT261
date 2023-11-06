@@ -1,96 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arithmetic Form</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
-</head>
-<body>
-    <h1>Our Arithmetic Form</h1>
-<form action="" method="post">
-    <fieldset>
-        <label>Name</label>
-        <input type="text" name="name"> 
-
-        <label>Phone</label>
-        <input type="tel" name="phone">
-
-        <label>How many Lattes?</label>
-        <input type="number" name="lattes">
-
-        <label>Capucinos?</label>
-        <input type="number" name="capucinos">
-
-        <label>How many Americanos?</label>
-        <input type="number" name="americanos">
-
-        <label>Comments</label>
-        <textarea name="comments"></textarea>
-
-        <label>Special Requests?</label>
-        <textarea name="special_requests"></textarea> <!-- Changed name attribute -->
-        
-        <input type="submit" value="Send my order">
-</fieldset>
-</form>
-<p><a href=""> Reset!</a></p>
 <?php
-// name, phone, lattes, capucinos, americanos, comments
-
-
-date_default_timezone_set('America/Los_Angeles');
-$our_time = date('H:i');
 
 if (isset($_POST['name'], 
-$_POST['phone'], 
-$_POST['lattes'], 
-$_POST['capucinos'], 
-$_POST['americanos'], 
-$_POST['comments'])) {  // start of isset code
-    
-if (empty($_POST['name']) && 
-empty($_POST['phone']) && 
-empty($_POST['lattes']) && 
-empty($_POST['capucinos']) && 
-empty($_POST['americanos']) && 
-empty($_POST['comments'])) {
-    echo '<p class="error">Please fill out all 
-    of the fields!</p>';
-} // end nested if empty code 
-else {
+$_POST['email'], 
+$_POST['amount'], 
+$_POST['currency'],
+$_POST['bank'])) {
     $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $lattes = $_POST['lattes'];
-    $capucinos = $_POST['capucinos'];
-    $americanos = $_POST['americanos'];
-    $comments = $_POST['comments'];
+    $email = $_POST['email'];
+    $amount = floatval($_POST['amount']);
+    $currency = floatval($_POST['currency']);
+    $bank = $_POST['bank'];
+    $total = $amount * $currency;
 
-// if and elseif statement regarding out time
+    if (!empty($name) && !empty($email) && !empty($amount) && !empty($currency) && !empty($bank)) {
 
-    if ($our_time <= '11') {
-        $our_time = "Good Morning";
-    } elseif ($our_time <= '17') {  
+    echo '<div class="box">
+    <h2>Hello '.$name.'</h2>
+    <p>You now have <b>$' . number_format($total, 2) . ' American dollars</b> and we will be emailing you at <b>' . $email . '</b> with your information, as well as depositing your funds at <b>' . $bank . ' bank!</b></p>';
 
-        $our_time = "Good Afternoon";
-    } else {
-        $our_time = "Good Evening";
+    // Determine which video to display based on the amount
+    if ($total >= 1000) {
+        echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/O5APc0z49wg?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    } elseif ($total < 999) {
+        // Place the other video's embed code here
+        echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/OTHER_VIDEO_ID?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
     }
 
-echo '<div class="box">
-        <h2>Hello, ' . $our_time . ' ' . $name . '!</h2>
-        <p>We have your order to this number ' . $phone . ' and you have ordered the following</p>
-        <ul>
-            <li>' . $lattes . ' lattes</li> <!-- Corrected variable name -->
-            <li>' . $capucinos . ' capucinos</li>
-            <li>' . $americanos . ' americanos</li>
-        </ul>
-        <p>Thank you for choosing our establishment</p>
-    </div>
-    ';
-} // end else
+    echo '</div>'; // Close the box div
+    }
+}
 
-} // end curly bracket of the isset
+// ... [rest of the PHP code]
 ?>
-</body>
-</html>

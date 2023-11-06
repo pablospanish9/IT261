@@ -1,0 +1,92 @@
+/* styles for my form3.php */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ddd;
+}
+
+form {
+    max-width:400px;
+    margin:20px auto;
+}
+
+fieldset {
+    border: 2px solid #800;
+    padding: 10px;
+}
+
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+
+}
+
+input[type=text],
+input[type=email], 
+input[type=number] {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    height:30px;
+}
+
+input[type=submit]{
+    margin-bottom: 20px;
+    width: auto;
+}
+
+select {
+    display:block;
+    margin-bottom: 15px;
+}
+
+form ul {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+.box {
+    width: 400px;
+    padding:10px;
+    margin:0 auto;
+}
+
+/* Typography */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top:10px;
+    /* margin-bottom:20px ; */
+}
+
+.error {
+    color:red;
+    font-style:italic;
+    font-size:1.2em;
+    margin-top: 5px;
+}
+
+.box {
+    width: 400px;
+    border:2px solid green;
+    margin: 20px auto;
+    padding: 10px;
+}
+
