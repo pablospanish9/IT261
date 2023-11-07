@@ -7,7 +7,7 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1>Currency 4 Extra Credit. This is not done yet. This is only a placeholder file. I will attempt this on November 6.</h1>
+    <h1>Currency 4 - with videos - Extra Credit </h1>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
     <fieldset>
         <label>NAME</label>
@@ -108,13 +108,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 //  videos
 if ($dollars > 1000) {
-    echo '<h2>I am REALLY happy because I now have $' . number_format($dollars, 2) . ' dollars.</h2>';
-    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/O5APc0z49wg?si=tJUv81Epj5qvJJG3&amp;clip=UgkxwrHBGha9Bt2msxQE-K352g1I6y3bGWle&amp;clipt=EJ2cAhj98AU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display: block; margin: 20px auto;"></iframe>
-        ';
+    echo '<h2>I am REALLY happy because I now have $' . number_format( $dollars, 2 ) . ' dollars.</h2>';
+    echo '<div style="text-align: center; margin-top: 20px; margin-bottom: 30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/O5APc0z49wg?si=tJUv81Epj5qvJJG3&amp;clip=UgkxwrHBGha9Bt2msxQE-K352g1I6y3bGWle&amp;clipt=EJ2cAhj98AU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
 } else {
-    echo '<h2>I am very sad because I now have $' . number_format($dollars, 2) . ' dollars.</h2>';
-    echo '';
+    echo '<h2>I am unhappy because I now have $' . number_format( $dollars, 2 ) . ' dollars.</h2>';
+    echo '<div style="text-align: center; margin-top: 20px; margin-bottom: 30px;"> <iframe width="560" height="315" src="https://www.youtube.com/embed/CC7OrEx5H4U?si=WAi0IgMQg_MGlDXh&amp;clip=Ugkxx5Mgnwu_Z6jQsjHNtb3ZM_ZTnG4zq3DM&amp;clipt=EOSNBBid4gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>';
 }
+
 
 } // closing if check not empty fields
 } // closing if check for the POST request 
