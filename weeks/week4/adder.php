@@ -51,8 +51,8 @@ Enter the first number: <label><input type="text" name="num1"><br>
 <?php     //adder-wrong.php
 
 if (isset($_POST['num1'], $_POST['num2'])){
-    $num1 = $_POST['num1'];
-    $num2 = $_POST['num2'];
+    $num1 = floatval($_POST['num1']); // added floatval so that only a number and not a string is passed as a number.
+    $num2 = floatval($_POST['num2']);
 $myTotal = $num1 + $num2; // Changed -= to = and corrected $Num2 to $num2 
 echo '<h2>You added '. $num1 .' and '. $num2 . '</h2>'; // Changed ".." for '..', added missing ' on .$num2, and erased not needed "'
 // echo ' <p> and the answer is <br>
