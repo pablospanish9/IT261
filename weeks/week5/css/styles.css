@@ -8,7 +8,7 @@
 }
 
 body {
-    background: #ddd;
+    background: rgb(231, 215, 215)
 }
 
 form {
@@ -19,6 +19,7 @@ form {
 fieldset {
     border: 2px solid #800;
     padding: 10px;
+    background-color: rgb(211, 235, 235);
 }
 
 label {
@@ -89,4 +90,25 @@ p {
     margin: 20px auto;
     padding: 10px;
 }
+
+/* footer, borrowed from website */
+
+footer {
+    height: 100px;
+    line-height: 60px;
+    background: #ddd;
+    clear: both;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;   
+}
+
+footer li {
+    justify-content: center;
+    margin: 0 15px;
+}
+
 

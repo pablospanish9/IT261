@@ -120,5 +120,22 @@ if ($dollars > 1000) {
 } // closing if check for the POST request 
 } // closes the outermost if check for the POST
 ?>
+<!-- Here is the validation code borrowed from footer: -->
+    <footer>
+        <ul>
+            <li>Copyright &copy; 2023</li>
+            <li>All Rights Reserved</li>
+            <li><a href="../index.php">Web Design by Pablo</a></li>
+            <li><a id="html-checker" href="#">HTML Validation</a></li>
+            <li><a id="css-checker" href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+            document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+            document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
+    </footer>
+    
+
 </body>
 </html>
