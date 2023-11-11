@@ -18,6 +18,7 @@ form {
 
 fieldset {
     border: 2px solid #800;
+    border-radius: 8px;
     padding: 10px;
     background-color: rgb(211, 235, 235);
 }
@@ -36,11 +37,17 @@ input[type=number] {
     display: block;
     margin-bottom: 10px;
     height:30px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 4px;
 }
 
 input[type=submit]{
     margin-bottom: 20px;
     width: auto;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 4px;
 }
 
 select {
@@ -57,6 +64,7 @@ form ul {
     width: 400px;
     padding:10px;
     margin: 10px auto;
+    border-radius: 7px;
 }
 
 /* Typography */
