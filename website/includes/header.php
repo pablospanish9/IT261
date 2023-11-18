@@ -33,15 +33,24 @@ switch (THIS_PAGE) {
         break;
 }
 // our navigation array
-$nav = array (
-    'index.php' => 'Home',
-    'about.php' => 'About',
-    'daily.php' => 'Daily',
-    'project.php' => 'Project',
-    'contact.php' => 'Contact',
-    'gallery.php' => 'Gallery'
-);
 
+// // below is the code given at the beginning of quarter
+// $nav = array (
+//     'index.php' => 'Home',
+//     'about.php' => 'About',
+//     'daily.php' => 'Daily',
+//     'project.php' => 'Project',
+//     'contact.php' => 'Contact',
+//     'gallery.php' => 'Gallery'
+// );
+
+// here is a newer version of this section
+$nav['index.php'] = 'Home';
+$nav['about.php'] = 'About';
+$nav['daily.php'] = 'Daily'; 
+$nav['project.php'] = 'Project'; 
+$nav['contact.php'] = 'Contact'; 
+$nav['gallery.php'] = 'Gallery'; 
 
 ?>
 
