@@ -1,13 +1,13 @@
-<?php              
+<?php   
+  include('config.php');
   include ('./includes/header.php');
    ?>
   <div id="wrapper">
 
-        <div id="hero">
-            <img src="images/lake.jpg"
-             alt="Twelve is greater than 3">
-
-        </div>
+<!-- // function is at the end of the config file: -->
+  <div id="hero">
+    <?php echo random_images($photos); ?>
+</div>
 <!-- end hero -->
 
 <main>

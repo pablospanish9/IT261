@@ -84,6 +84,15 @@ Hello there. Here I am again, slowly learning how to make websites. I am continu
         <li><a href="weeks/week6/thx.php" target="_blank">thx.php</a></li>
         </ol>
 
+        <h3>Week 7</h3>
+         <ol>
+        <li><a href="weeks/week7/form3.php" target="_blank">form3.php</a></li>
+        <li><a href="weeks/week7/form5.php" target="_blank">form5.php</a></li>
+        <li><a href="weeks/week7/pictures.php" target="_blank">pictures.php</a></li>
+        <li><a href="weeks/week7/rand.php" target="_blank">rand.php</a></li>
+        <li><a href="weeks/week7/strings.php" target="_blank">strings.php</a></li>
+        </ol>
+
     </aside>
 </div>
 <!-- close wrapper -->

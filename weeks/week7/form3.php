@@ -65,11 +65,23 @@ if(empty($_POST['wines'])) {
     $wines = $_POST['wines'];
 }
 
-if(empty($_POST['phone'])) {
-    $phone_err = 'Please fill in your phone number';
-    } else {
+// if(empty($_POST['phone'])) {
+//     $phone_err = 'Please fill in your phone number';
+//     } else {
+//     $phone = $_POST['phone'];
+// }
+
+if(empty($_POST['phone'])) { // if empty, type in your number
+    $phone_err = 'Your phone number please!';
+    } elseif(array_key_exists('phone', $_POST)){
+    if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone']))
+    { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+    $phone_err = 'Invalid format!';
+    } else{
     $phone = $_POST['phone'];
-}
+    } // end else
+    } // end main if
+
 
 if(empty($_POST['comments'])) {
     $comments_err = 'We value your input';
@@ -138,7 +150,8 @@ if (!empty($first_name) &&
     !empty($regions) &&
     !empty($gender) &&
     !empty($comments) &&
-    !empty($privacy)) {
+    !empty($privacy) &&
+    preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone']))  {
 
         mail($to, $subject, $body, $headers);
         header('Location:thx.php');
@@ -158,11 +171,11 @@ if (!empty($first_name) &&
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our second form in Week 6!</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <title>Form 3 in week 7 - Phone Validation!</title>
+    <link href="../week6/css/styles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<h1>Second Form in week 6</h1>
+<h1>Form 3 in week 7 - Phone Validation!</h1>
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
 <fieldset>
@@ -196,7 +209,7 @@ if (!empty($first_name) &&
     </ul>
 
     <label>Phone</label>
-    <input type="tel" name="phone" value="<?php if (isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']); ?>">
+    <input type="tel" name="phone" placeholder="xxx-xxx-xxxx" value="<?php if (isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']); ?>">
     <span><?php echo $phone_err;?></span>
 
     <label>Wines</label>

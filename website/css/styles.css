@@ -11,6 +11,10 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.current {
+    color:red;
+}
+
 header {
     background: rgb(150, 191, 192);
     padding: 20px 0;
@@ -54,8 +58,10 @@ overflow: hidden;
 }
 
 #hero {
-background: red;
+/* background: red; */
 margin-bottom: 20px;
+width: 100%; 
+height: auto;
 }
 
 main {
