@@ -1,4 +1,4 @@
-<form action ="" method="post">
+<!-- <form action ="" method="post"> -->
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
@@ -63,9 +63,11 @@
 <span><?php echo $services_err;?></span>
 
 
-<label>Regions</label>
+<label>Where is your event?</label>
 <select name="regions">
   <option value="" <?php if (isset($_POST['regions']) && $_POST['regions'] == "") echo 'selected="selected"'; ?>>Select One !</option>
+
+  <option value="remote" <?php if (isset($_POST['regions']) && $_POST['regions'] == "remote") echo 'selected="selected"'; ?>>Remote (Zoom)</option>
 
   <option value="snohomish" <?php if (isset($_POST['regions']) && $_POST['regions'] == "snohomish") echo 'selected="selected"'; ?>>Snohomish County</option>
 
@@ -100,5 +102,3 @@
 
 
 
-
-</form>
