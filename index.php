@@ -93,6 +93,14 @@ Hello there. Here I am again, slowly learning how to make websites. I am continu
         <li><a href="weeks/week7/strings.php" target="_blank">strings.php</a></li>
         </ol>
 
+        <h3>Week 8</h3>
+         <ol>
+        <!-- <li><a href="weeks/week8/config.php" target="_blank">config.php</a></li>
+        <li><a href="weeks/week8/credentials.php" target="_blank">credentials.php</a></li> -->
+        <li><a href="weeks/week8/people.php" target="_blank">people.php</a></li>
+        <li><a href="weeks/week8/people-view.php" target="_blank">people-view.php</a></li>
+        </ol>
+
     </aside>
 </div>
 <!-- close wrapper -->
@@ -115,3 +123,4 @@ Hello there. Here I am again, slowly learning how to make websites. I am continu
   </footer>
 </body>
 </html>
+
