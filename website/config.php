@@ -374,3 +374,10 @@ if (!empty($first_name) &&
 
 
 
+$people['Ludwig_Beethoven'] = 'beeth_Deaf composer and pianist from Germany.';
+$people['Wolfgang_Mozart'] = 'mozar_Classical composer from Austria.';
+$people['Ella_Fitzgerald'] = 'fitzg_Jazz singer from USA.';
+$people['Miles_Davis'] = 'davis_Jazz trumpeter from IL, USA.';
+$people['Madonna_Ciccone'] = 'madon_Pop singer and actress from MI, USA';
+$people['Freddie_Mercury'] = 'mercu_Lead vocalist of music group Queen from UK.';
+

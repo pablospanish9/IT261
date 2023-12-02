@@ -1,64 +1,9 @@
 <?php
-$people['Ludwig_Beethoven'] = 'beeth_Deaf composer and pianist from Germany.';
-$people['Wolfgang_Mozart'] = 'mozar_Classical composer from Austria.';
-$people['Ella_Fitzgerald'] = 'fitzg_Jazz singer from USA.';
-$people['Miles_Davis'] = 'davis_Jazz trumpeter from IL, USA.';
-$people['Madonna_Ciccone'] = 'madon_Pop singer and actress from MI, USA';
-$people['Freddie_Mercury'] = 'mercu_Lead vocalist of music group Queen from UK.';
+
+include('config.php');
+include('./includes/header.php');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery of Images</title>
-    
-<style>
-  body {
-        background-color: #cedff0; 
-        text-align: center; 
-        margin: 0;
-        padding: 0;
-    }
-    table {
-        border: 2px solid red;
-        border-collapse:collapse;
-        margin: 0 auto; 
-        background-color:#e7e8dc;
-    }
 
-    td {
-        border: 2px solid red;
-        padding: 10px;
-    }
-
-    td img {
-        max-width: 180px;
-        height: auto;
-        margin: 3px 8px; 
-        display: block; 
-    }
-
-    footer {
-    height: 100px;
-    line-height: 60px;
-    background: #ddd;
-    clear: both;
-}
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;   
-}
-
-footer li {
-    justify-content: center;
-    margin: 0 15px;
-}
-</style>
-</head>
-<body>
     <table>
     <?php foreach ($people as $name => $image) : ?>
         <tr>
