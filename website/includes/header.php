@@ -10,15 +10,15 @@
      initial-scale=1.0">
     <title><?php echo $title; ?></title>
 
-    <link href="css/stylesgallery.css" 
-    type="text/css" rel="stylesheet">
+    <!-- <link href="css/stylesgallery.css" 
+    type="text/css" rel="stylesheet"> -->
     
-    <link href="css/styles.css" 
+    <link href="css/styles2.css" 
     type="text/css" rel="stylesheet">
 
-    <link href="../weeks/week6/css/styles.css" type="text/css" rel="stylesheet">
+    <!-- <link href="../weeks/week6/css/styles.css" type="text/css" rel="stylesheet">
 
-
+ -->
 
   </head>
 <body class ="<?php echo $body; ?>">

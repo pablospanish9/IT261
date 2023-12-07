@@ -1,6 +1,26 @@
 <?php  
 
-ob_start();
+ob_start(); // prevents header errors before reading the whole page!
+// lines 5 to 22 below is from the Week 8 People config:
+define('DEBUG', 'TRUE');  // We want to see our errors
+
+include('credentials.php');
+
+
+
+function myError($myFile, $myLine, $errorMsg)
+{
+if(defined('DEBUG') && DEBUG)
+{
+ echo 'Error in file: <b> '.$myFile.' </b> on line: <b> '.$myLine.' </b>';
+      echo 'Error message: <b> '.$errorMsg.'</b>';
+      die();
+  }  else {
+      echo ' Houston, we have a problem!';
+      die();
+  }
+}
+
 
 define('THIS_PAGE', basename($_SERVER['PHP_SELF'])); 
 
@@ -20,10 +40,16 @@ switch (THIS_PAGE) {
         $body = 'daily inner';
         break;
 
-    case 'project.php':
-        $title = 'Project page of our Website Project';
-        $body = 'project inner';
+    case 'interpreters.php':
+        $title = 'Interpreters page of our Website Project';
+        $body = 'interpreters inner';
         break;
+
+        case 'interpreters-view.php':
+            $title = 'Interpreters-view page of our Website Project';
+            $body = 'interpreters-view inner';
+            break;
+    
 
     case 'contact.php':
         $title = 'Contact page of our Website Project';
@@ -47,8 +73,8 @@ $nav = array (
     'index.php' => 'Home',
     'about.php' => 'About',
     'daily.php' => 'Daily',
-    'project.php' => 'Project',
-    'contact.php' => 'Contact',
+    'interpreters.php' => 'Project',
+  'contact.php' => 'Contact',
     'gallery.php' => 'Gallery'
 );
 

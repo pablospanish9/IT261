@@ -127,7 +127,7 @@ $_POST['comments'],
 $_POST['privacy'])){
 
 // email sending
-$to = 'szemeo@mystudentswa.com, pablosep@msn.com'; 
+$to = 'pablosep@msn.com'; 
 $subject = 'Test email on '.date('m/d/y, h:i A');
 $body = 'Last Name: ' . $last_name . PHP_EOL .
         'First Name: ' . $first_name . PHP_EOL .
