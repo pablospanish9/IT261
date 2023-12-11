@@ -7,6 +7,8 @@ include('credentials.php');
 
 $errors = array();
 
+$success = 'You have successfully logged on!';
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 

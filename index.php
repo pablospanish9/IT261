@@ -101,6 +101,13 @@ Hello there. Here I am again, slowly learning how to make websites. I am continu
         <li><a href="weeks/week8/people-view.php" target="_blank">people-view.php</a></li>
         </ol>
 
+        <h3>Week 9</h3>
+         <ol>
+        <li><a href="weeks/week9/index.php" target="_blank">index.php</a></li>
+        <li><a href="weeks/week9/login.php" target="_blank">login.php</a></li>
+        <li><a href="weeks/week9/register.php" target="_blank">register.php</a></li>
+        </ol>
+
     </aside>
 </div>
 <!-- close wrapper -->

@@ -2,12 +2,14 @@
 include('server.php');
 // include talking to our server.php
 // eventually we will be connecting to our header include
-// include ('./includes/header.php');
+include ('./includes/header.php');
 ?>
+<div id="wrapper-register">
+<h1 class="center">Register Today!</h1>
 <!-- Here, below, is the code to create a register page -->
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <!-- first name, last name, email, username, password 1, password 2 -->
-
+<fieldset>
     <label>First name</label>
     <input type="text" name="first_name" value="<?php if (isset($_POST['first_name'])) echo htmlspecialchars($_POST['first_name']); ?>"> 
 
@@ -28,18 +30,33 @@ include('server.php');
 
     <button type="submit"  name="reg_user"  class="btn"> Register! </button>
 
-    <button type="button" onclick="window.location.href='<? echo htmlspecialchars($_SERVER['PHP_SELF'])  ;?>'"> Reset </button>
+    <button type="button" onclick="window.location.href='<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ;?>'"> Reset </button>
+</fieldset>
 </form>
+<p class="center">Already a member? <a href="login.php">Please login here!</a></p>
 
 <?php
 include('errors.php'); ?>
+</div> 
+<!-- end wrapper -->
+<!-- non include footer to have separate css -->
+<footer class="non-fixed">
+    <ul>
+        <li>Copyright &copy;
+            2023</li>
+        <li>All Rights Reserved</li>
+        <li><a href="../../index.php">Web Design by Pablo</a></li>
+        <li><a id="html-checker" href="#">HTML Validation</a></li>
+        <li><a id="css-checker" href="#">CSS Validation</a></li>
+        </ul>
+        
+        <script>
+                document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+                document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        </script>
 
-<!-- this snipet is to clear the password filled in by Chrome on my form:-->
+  </footer>
+  
+</body>
 
-<script>
-    window.onload = function() {
-        document.getElementById('username').value = '';
-        document.getElementById('password1').value = '';
-        document.getElementById('password2').value = '';
-    };
-</script>
+</html>

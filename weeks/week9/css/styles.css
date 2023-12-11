@@ -106,9 +106,13 @@ footer {
     background: #ddcaca;
     border-top: 1px solid #868484;
     clear: both;
+        position:fixed;
+        bottom: 0;
+        width: 100%;
+    }
 
 
-}
+
 
 footer ul {
     display: flex;
@@ -299,6 +303,15 @@ form ul {
     text-align: center;
 }
 
+.errors {
+    text-align: center;
+    font-weight: 600; 
+    color: red; 
+    font-size: medium; 
+    font-style: italic; 
+}
+
+
 button {
     padding: 8px 15px; /* Adds padding inside the button */
     font-weight: bold; /* Makes the text bold */
@@ -317,15 +330,16 @@ button:hover {
 
 .success {
     float:left;
-    margin: left 35px; 
+    margin-left: 35px; 
 }
 
 .welcome-logout {
     float:right;
 }
 
-footer {
-    position:fixed;
-    bottom: 0;
-    width: 100%;
+
+/* style only for the register page footer: */
+.non-fixed footer {
+    position: relative; 
+    bottom: auto; 
 }

@@ -4,7 +4,6 @@
 // we would like the information that is inputted via our registration form to land in our database!!!
 
 session_start();
-
 include('config.php');
 // here we will eventually have a header include
 // include('./includes/header.php');
@@ -12,19 +11,19 @@ include('config.php');
 $iConn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die(myError(__FILE__,__LINE__,mysqli_connect_error()));
 
 // // Initialize errors array
-// $errors = [];
+$errors = [];
 
 // we will be asking if reg_user is set
 // also using a new function which removes extra characters mysqli_real_escape_string
 
 if(isset($_POST['reg_user'])) {
-
-    $first_name = mysqli_real_escape_string($iConn, $_POST['first_name']);    
-    $last_name = mysqli_real_escape_string($iConn, $_POST['last_name']);
-    $email = mysqli_real_escape_string($iConn, $_POST['email']);
-    $username = mysqli_real_escape_string($iConn, $_POST['username']);
-    $password1 = mysqli_real_escape_string($iConn, $_POST['password1']);
-    $password2 = mysqli_real_escape_string($iConn, $_POST['password2']);
+ $first_name = mysqli_real_escape_string($iConn, $_POST['first_name']);    
+ $last_name = mysqli_real_escape_string($iConn, $_POST['last_name']);
+ $email = mysqli_real_escape_string($iConn, $_POST['email']);
+ $username = mysqli_real_escape_string($iConn, $_POST['username']);
+ $password1 = mysqli_real_escape_string($iConn, $_POST['password1']);
+ $password2 = mysqli_real_escape_string($iConn, $_POST['password2']);
+    
 
     // message to display to the end user if they are not inputting information:
     // if empty - we are going to say something
@@ -83,19 +82,16 @@ if(isset($_POST['reg_user'])) {
     // if there are NO errors, life is good
 
     if(count($errors) == 0) {
-
         $password = md5($password1);
-
-        // logically - we have to insert the information into our database
-
+        // insert information into database
         $query = "INSERT INTO users (first_name, last_name, email, username, password) VALUES ('$first_name', '$last_name', '$email', '$username', '$password')";
-
         mysqli_query($iConn, $query);
 
         $_SESSION['username'] = $username;
-        $_SESSION['success'] = $success;
+        $_SESSION['success'] = 'You have successfully registered!';
 
         header('Location: login.php');
+        exit();
 
     } // end if errors
 
@@ -135,7 +131,7 @@ $_SESSION['success'] = $success;
 header('Location:index.php');
 } else {
 
-    array_push($error, 'Wrong username/password combination!');
+    array_push($errors, 'Wrong username/password combination!');
 }
 
 
