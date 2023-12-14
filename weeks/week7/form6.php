@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 ob_start();
 
 // Variable declarations
@@ -15,20 +15,21 @@ function my_services($servicesArray) {
     return !empty($servicesArray) ? implode(', ', $servicesArray) : '';
 }
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // Sanitize and validate inputs
-    $first_name = filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_STRING);
-    $last_name = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $organization = filter_input(INPUT_POST, 'organization', FILTER_SANITIZE_STRING);
-    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    $location = filter_input(INPUT_POST, 'location', FILTER_SANITIZE_STRING);
-    $events = filter_input(INPUT_POST, 'events', FILTER_SANITIZE_STRING);
-    $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
-    $privacy = filter_input(INPUT_POST, 'privacy', FILTER_SANITIZE_STRING);
-    $services = $_POST['services'] ?? [];
-    $language = $_POST['language'] ?? [];
 
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        // Directly assigning POST data to variables
+        $first_name = $_POST['first_name'] ?? '';
+        $last_name = $_POST['last_name'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $organization = $_POST['organization'] ?? '';
+        $phone = $_POST['phone'] ?? '';
+        $location = $_POST['location'] ?? '';
+        $events = $_POST['events'] ?? '';
+        $comments = $_POST['comments'] ?? '';
+        $privacy = $_POST['privacy'] ?? '';
+        $services = $_POST['services'] ?? [];
+        $language = $_POST['language'] ?? [];
+        
     // Validation checks
     if(empty($first_name)) $first_name_err = 'Please fill in your first name';
     if(empty($last_name)) $last_name_err = 'Please fill in your last name';
@@ -52,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if(!$first_name_err && !$last_name_err && !$email_err && !$services_err &&
        !$phone_err && !$location_err && !$events_err && !$comments_err && !$privacy_err) {
         
-        $to = 'pablosep@msn.com,milenacw@live.com';
+        $to = 'pablosep@msn.com';
         $subject = 'Interpreter request on '.date('m/d/y, h:i A');
         $body = "This is a request for work. Please reply only if available and interested, directly to $first_name $last_name" . PHP_EOL . PHP_EOL .
                 "Last Name: $last_name" . PHP_EOL .
@@ -111,31 +112,44 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 <label>In what languages do you need interpreting? Please select all that apply.</label>
-<ul>
-    <li><input type="checkbox" name="language[]" value="spanish" <?php if (isset($_POST['language']) && in_array('spanish', $_POST['language'])) echo 'checked="checked"'; ?>>Spanish</li>
 
-    <li><input type="checkbox" name="language[]" value="russian" <?php if (isset($_POST['language']) && in_array('russian', $_POST['language'])) echo 'checked="checked"'; ?>>Russian</li>
-
-    <li><input type="checkbox" name="language[]" value="somali" <?php if (isset($_POST['language']) && in_array('somali', $_POST['language'])) echo 'checked="checked"'; ?>>Somali</li>
-
-    <li><input type="checkbox" name="language[]" value="mandarin" <?php if (isset($_POST['language']) && in_array('mandarin', $_POST['language'])) echo 'checked="checked"'; ?>>Mandarin</li>
-
-    <li><input type="checkbox" name="language[]" value="cantonese" <?php if (isset($_POST['language']) && in_array('cantonese', $_POST['language'])) echo 'checked="checked"'; ?>>Cantonese</li>
-
-    <li><input type="checkbox" name="language[]" value="asl" <?php if (isset($_POST['language']) && in_array('asl', $_POST['language'])) echo 'checked="checked"'; ?>>American Sign Language (ASL)</li>
-
-    <li><input type="checkbox" name="language[]" value="vietnamese" <?php if (isset($_POST['language']) && in_array('vietnamese', $_POST['language'])) echo 'checked="checked"'; ?>>Vietnamese</li>
-
-    <li><input type="checkbox" name="language[]" value="korean" <?php if (isset($_POST['language']) && in_array('korean', $_POST['language'])) echo 'checked="checked"'; ?>>Korean</li>
-
-    <li><input type="checkbox" name="language[]" value="tagalog" <?php if (isset($_POST['language']) && in_array('tagalog', $_POST['language'])) echo 'checked="checked"'; ?>>Tagalog</li>
-
-    <li><input type="checkbox" name="language[]" value="ukrainian" <?php if (isset($_POST['language']) && in_array('ukrainian', $_POST['language'])) echo 'checked="checked"'; ?>>Ukrainian</li>
-
+    <li><input type="checkbox" name="language[]" value="amharic" <?php if (isset($_POST['language']) && in_array('amharic', $_POST['language'])) echo 'checked="checked"'; ?>>Amharic</li>
     <li><input type="checkbox" name="language[]" value="arabic" <?php if (isset($_POST['language']) && in_array('arabic', $_POST['language'])) echo 'checked="checked"'; ?>>Arabic</li>
-
+    <li><input type="checkbox" name="language[]" value="asl" <?php if (isset($_POST['language']) && in_array('asl', $_POST['language'])) echo 'checked="checked"'; ?>>American Sign Language (ASL)</li>
+    <li><input type="checkbox" name="language[]" value="burmese" <?php if (isset($_POST['language']) && in_array('burmese', $_POST['language'])) echo 'checked="checked"'; ?>>Burmese</li>
+    <li><input type="checkbox" name="language[]" value="cambodian" <?php if (isset($_POST['language']) && in_array('cambodian', $_POST['language'])) echo 'checked="checked"'; ?>>Cambodian (Khmer)</li>
+    <li><input type="checkbox" name="language[]" value="cantonese" <?php if (isset($_POST['language']) && in_array('cantonese', $_POST['language'])) echo 'checked="checked"'; ?>>Cantonese Chinese</li>
+    <li><input type="checkbox" name="language[]" value="french" <?php if (isset($_POST['language']) && in_array('french', $_POST['language'])) echo 'checked="checked"'; ?>>French</li>
+    <li><input type="checkbox" name="language[]" value="hindi" <?php if (isset($_POST['language']) && in_array('hindi', $_POST['language'])) echo 'checked="checked"'; ?>>Hindi</li>
     <li><input type="checkbox" name="language[]" value="japanese" <?php if (isset($_POST['language']) && in_array('japanese', $_POST['language'])) echo 'checked="checked"'; ?>>Japanese</li>
+    <li><input type="checkbox" name="language[]" value="korean" <?php if (isset($_POST['language']) && in_array('korean', $_POST['language'])) echo 'checked="checked"'; ?>>Korean</li>
+    <li><input type="checkbox" name="language[]" value="kurdish" <?php if (isset($_POST['language']) && in_array('kurdish', $_POST['language'])) echo 'checked="checked"'; ?>>Kurdish</li>
+    <li><input type="checkbox" name="language[]" value="lao" <?php if (isset($_POST['language']) && in_array('lao', $_POST['language'])) echo 'checked="checked"'; ?>>Lao</li>
+    <li><input type="checkbox" name="language[]" value="mandarin" <?php if (isset($_POST['language']) and in_array('mandarin', $_POST['language'])) echo 'checked="checked"'; ?>>Mandarin Chinese</li>
+    <li><input type="checkbox" name="language[]" value="marshallese" <?php if (isset($_POST['language']) && in_array('marshallese', $_POST['language'])) echo 'checked="checked"'; ?>>Marshallese</li>
+    <li><input type="checkbox" name="language[]" value="nepali" <?php if (isset($_POST['language']) && in_array('nepali', $_POST['language'])) echo 'checked="checked"'; ?>>Nepali</li>
+    <li><input type="checkbox" name="language[]" value="oromo" <?php if (isset($_POST['language']) && in_array('oromo', $_POST['language'])) echo 'checked="checked"'; ?>>Oromo</li>
+    <li><input type="checkbox" name="language[]" value="pashto" <?php if (isset($_POST['language']) && in_array('pashto', $_POST['language'])) echo 'checked="checked"'; ?>>Pashto</li>
+    <li><input type="checkbox" name="language[]" value="persian" <?php if (isset($_POST['language']) && in_array('persian', $_POST['language'])) echo 'checked="checked"'; ?>>Persian (Dari/Farsi/Tajiki)</li>
+    <li><input type="checkbox" name="language[]" value="portuguese" <?php if (isset($_POST['language']) && in_array('portuguese', $_POST['language'])) echo 'checked="checked"'; ?>>Portuguese</li>
+    <li><input type="checkbox" name="language[]" value="punjabi" <?php if (isset($_POST['language']) && in_array('punjabi', $_POST['language'])) echo 'checked="checked"'; ?>>Punjabi</li>
+    <li><input type="checkbox" name="language[]" value="romanian" <?php if (isset($_POST['language']) && in_array('romanian', $_POST['language'])) echo 'checked="checked"'; ?>>Romanian</li>
+    <li><input type="checkbox" name="language[]" value="russian" <?php if (isset($_POST['language']) && in_array('russian', $_POST['language'])) echo 'checked="checked"'; ?>>Russian</li>
+    <li><input type="checkbox" name="language[]" value="samoan" <?php if (isset($_POST['language']) && in_array('samoan', $_POST['language'])) echo 'checked="checked"'; ?>>Samoan</li>
+    <li><input type="checkbox" name="language[]" value="serbocroatian" <?php if (isset($_POST['language']) && in_array('serbocroatian', $_POST['language'])) echo 'checked="checked"'; ?>>Serbo-Croatian (Bosnian/Croatian/Serbian)</li>
+    <li><input type="checkbox" name="language[]" value="somali" <?php if (isset($_POST['language']) && in_array('somali', $_POST['language'])) echo 'checked="checked"'; ?>>Somali</li>
+    <li><input type="checkbox" name="language[]" value="spanish" <?php if (isset($_POST['language']) && in_array('spanish', $_POST['language'])) echo 'checked="checked"'; ?>>Spanish</li>
+    <li><input type="checkbox" name="language[]" value="swahili" <?php if (isset($_POST['language']) && in_array('swahili', $_POST['language'])) echo 'checked="checked"'; ?>>Swahili</li>
+    <li><input type="checkbox" name="language[]" value="tagalog" <?php if (isset($_POST['language']) && in_array('tagalog', $_POST['language'])) echo 'checked="checked"'; ?>>Tagalog</li>
+    <li><input type="checkbox" name="language[]" value="thai" <?php if (isset($_POST['language']) && in_array('thai', $_POST['language'])) echo 'checked="checked"'; ?>>Thai</li>
+    <li><input type="checkbox" name="language[]" value="tigrinya" <?php if (isset($_POST['language']) && in_array('tigrinya', $_POST['language'])) echo 'checked="checked"'; ?>>Tigrinya</li>
+    <li><input type="checkbox" name="language[]" value="turkish" <?php if (isset($_POST['language']) && in_array('turkish', $_POST['language'])) echo 'checked="checked"'; ?>>Turkish</li>
+    <li><input type="checkbox" name="language[]" value="ukrainian" <?php if (isset($_POST['language']) && in_array('ukrainian', $_POST['language'])) echo 'checked="checked"'; ?>>Ukrainian</li>
+    <li><input type="checkbox" name="language[]" value="urdu" <?php if (isset($_POST['language']) && in_array('urdu', $_POST['language'])) echo 'checked="checked"'; ?>>Urdu</li>
+    <li><input type="checkbox" name="language[]" value="vietnamese" <?php if (isset($_POST['language']) && in_array('vietnamese', $_POST['language'])) echo 'checked="checked"'; ?>>Vietnamese</li>
+    <li><input type="checkbox" name="language[]" value="other" <?php if (isset($_POST['language']) && in_array('other', $_POST['language'])) echo 'checked="checked"'; ?>>OTHER, please write in the comments box below.</li>
 </ul>
+
 
 
 
